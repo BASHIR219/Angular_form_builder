@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Form Builder - Vishal Kumar</h2>
+  <form (ngSubmit)="addElement()">
+    <div class="input-group">
+      <label for="inputName">Input Name:</label>
+      <input type="text" id="inputName" [(ngModel)]="inputName" name="inputName" required />
+    </div>
+    <div class="input-group">
+      <label for="inputType">Input Type:</label>
+      <select id="inputType" [(ngModel)]="inputType" name="inputType" required>
+        <option value="text">Text</option>
+        <option value="radio">Radio</option>
+        <option value="email">Email</option>
+        <option value="dropdown">Dropdown</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="file">File</option>
+        <option value="number">Number</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="required">Required:</label>
+      <select id="required" [(ngModel)]="required" name="required">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="inputLabel">Input Label:</label>
+      <input type="text" id="inputLabel" [(ngModel)]="inputLabel" name="inputLabel" required />
+    </div>
+    <button type="button" (click)="addElement()">Add Element</button>
+  </form>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Label</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of formElements">
+        <td>{{ element.name }}</td>
+        <td>{{ element.type }}</td>
+        <td>{{ element.required ? 'Yes' : 'No' }}</td>
+        <td>{{ element.label }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="createForm()">Generate Form HTML</button>
+  <div id="generatedForm" *ngIf="generatedFormHtml">
+    <h3>Generated Form HTML</h3>
+    <pre>{{ generatedFormHtml }}</pre>
+  </div>
+</div>
