@@ -1,22 +1,21 @@
 <div class="container">
-    <h2>Generated Form</h2>
-    <form>
-      <div *ngFor="let element of formElements" class="input-group">
-        <label [for]="element.name">{{ element.label }}</label>
+    <h2 class="form-title">Generated Form</h2>
+    <form class="generated-form">
+      <div *ngFor="let element of formElements" class="form-group">
+        <label [for]="element.name" class="form-label">{{ element.label }}</label>
   
         <ng-container [ngSwitch]="element.type">
-          <input *ngSwitchCase="'text'" [id]="element.name" [name]="element.name" type="text" [required]="element.required" />
-          <input *ngSwitchCase="'email'" [id]="element.name" [name]="element.name" type="email" [required]="element.required" />
-          <input *ngSwitchCase="'number'" [id]="element.name" [name]="element.name" type="number" [required]="element.required" />
-          <input *ngSwitchCase="'checkbox'" [id]="element.name" [name]="element.name" type="checkbox" [required]="element.required" />
-          <select *ngSwitchCase="'dropdown'" [id]="element.name" [name]="element.name" [required]="element.required">
+          <input *ngSwitchCase="'text'" [id]="element.name" [name]="element.name" type="text" [required]="element.required" class="form-input" />
+          <input *ngSwitchCase="'email'" [id]="element.name" [name]="element.name" type="email" [required]="element.required" class="form-input" />
+          <input *ngSwitchCase="'number'" [id]="element.name" [name]="element.name" type="number" [required]="element.required" class="form-input" />
+          <input *ngSwitchCase="'checkbox'" [id]="element.name" [name]="element.name" type="checkbox" [required]="element.required" class="form-checkbox" />
+          <select *ngSwitchCase="'dropdown'" [id]="element.name" [name]="element.name" [required]="element.required" class="form-select">
             <option>Option 1</option>
             <option>Option 2</option>
           </select>
-          <input *ngSwitchCase="'file'" [id]="element.name" [name]="element.name" type="file" [required]="element.required" />
+          <input *ngSwitchCase="'file'" [id]="element.name" [name]="element.name" type="file" [required]="element.required" class="form-input" />
         </ng-container>
       </div>
-      <button type="submit">Submit</button>
     </form>
   </div>
   
