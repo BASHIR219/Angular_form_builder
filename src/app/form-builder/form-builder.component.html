@@ -1,9 +1,10 @@
 <div class="container">
   <h2>Form Builder - Vishal Kumar</h2>
+
   <form (ngSubmit)="addElement()">
     <div class="input-group">
       <label for="inputName">Input Name:</label>
-      <input type="text" id="inputName" [(ngModel)]="inputName" name="inputName" required />
+      <input class="frm" type="text" id="inputName" [(ngModel)]="inputName" name="inputName" required />
     </div>
     <div class="input-group">
       <label for="inputType">Input Type:</label>
@@ -26,12 +27,13 @@
     </div>
     <div class="input-group">
       <label for="inputLabel">Input Label:</label>
-      <input type="text" id="inputLabel" [(ngModel)]="inputLabel" name="inputLabel" required />
+      <input class="frm" type="text" id="inputLabel" [(ngModel)]="inputLabel" name="inputLabel" required />
     </div>
     <button type="button" (click)="addElement()">Add Element</button>
+    
   </form>
   
-  <table>
+  <table class="tbl">
     <thead>
       <tr>
         <th>Name</th>
@@ -41,18 +43,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let element of formElements">
-        <td>{{ element.name }}</td>
-        <td>{{ element.type }}</td>
-        <td>{{ element.required ? 'Yes' : 'No' }}</td>
-        <td>{{ element.label }}</td>
-      </tr>
+      @for(element of formElements; track element.name){
+        <tr>
+          <td>{{ element.name }}</td>
+          <td>{{ element.type }}</td>
+          <td>{{ element.required ? 'Yes' : 'No' }}</td>
+          <td>{{ element.label }}</td>
+        </tr>
+      }
     </tbody>
   </table>
 
   <button (click)="createForm()">Generate Form HTML</button>
-  <div id="generatedForm" *ngIf="generatedFormHtml">
-    <h3>Generated Form HTML</h3>
-    <pre>{{ generatedFormHtml }}</pre>
+  <button (click)="navigateToDynamicForm()">Generate Form</button>
+
+  <div id="generatedForm">
+    @if(generatedFormHtml){
+      <h3>Generated Form HTML</h3>
+      <pre>{{ generatedFormHtml }}</pre>
+    }
   </div>
+
 </div>

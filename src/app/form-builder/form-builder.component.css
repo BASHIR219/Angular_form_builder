@@ -3,6 +3,26 @@ body {
   padding: 20px;
 }
 
+.frm{
+  width: 96% !important;
+}
+
+.tbl{
+  margin-bottom: 10px;
+}
+
+.new-comp{
+  border: 1px solid black;
+  background-color: green;
+  width: 500px;
+  height: 400px;
+
+}
+
+.headings{
+  color: red;
+}
+
 .container {
   max-width: 500px;
   margin: auto;
