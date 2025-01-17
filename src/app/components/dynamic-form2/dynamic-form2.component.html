@@ -9,6 +9,7 @@
           <input *ngSwitchCase="'email'" [id]="element.name" [name]="element.name" type="email" [required]="element.required" class="form-input" />
           <input *ngSwitchCase="'number'" [id]="element.name" [name]="element.name" type="number" [required]="element.required" class="form-input" />
           <input *ngSwitchCase="'checkbox'" [id]="element.name" [name]="element.name" type="checkbox" [required]="element.required" class="form-checkbox" />
+          <input *ngSwitchCase="'radio'" [id]="element.name" [name]="element.name" type="radio" [required]="element.required" class="form-checkbox" />
           <select *ngSwitchCase="'dropdown'" [id]="element.name" [name]="element.name" [required]="element.required" class="form-select">
             <option>Option 1</option>
             <option>Option 2</option>

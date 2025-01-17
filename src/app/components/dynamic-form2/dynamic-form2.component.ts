@@ -15,5 +15,6 @@ export class DynamicForm2Component implements OnInit {
 
   ngOnInit() {
     this.formElements = this.formDataService.getFormElements();
+    console.log(this.formElements);
   }
 }
