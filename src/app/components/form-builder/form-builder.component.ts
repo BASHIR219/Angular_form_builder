@@ -30,6 +30,10 @@ export class FormBuilderComponent {
     this.router.navigate(['/dynamic-form2']);
   }
 
+  navigateToDynamicForm3() {
+    this.router.navigate(['/dynamic-form3'],{state:{formElements:this.formElements}});
+  }
+
   addElement() {
     if (!this.inputName || !this.inputLabel) {
       alert('Please fill in all fields');
