@@ -55,12 +55,14 @@
   </table>
 
   <button (click)="createForm()">Generate Form HTML</button>
-  <button (click)="navigateToDynamicForm()">Generate Form</button>
+  <button (click)="navigateToDynamicForm()">Generate Form using Params</button>
+  <button (click)="navigateToDynamicForm2()">Generate Form using Services</button>
+
 
   <div id="generatedForm">
     @if(generatedFormHtml){
       <h3>Generated Form HTML</h3>
-      <pre>{{ generatedFormHtml }}</pre>
+      <textarea class="pre">{{ generatedFormHtml }}</textarea>
     }
   </div>
 

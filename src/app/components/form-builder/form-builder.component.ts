@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormDataService } from '../../services/form-data.service';
 
 @Component({
   selector: 'app-form-builder',
@@ -16,12 +17,17 @@ export class FormBuilderComponent {
   formElements: any[] = [];
   generatedFormHtml: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private formDataService: FormDataService) {}
 
   navigateToDynamicForm() {
     this.router.navigate(['/dynamic-form'], {
       queryParams: { formElements: JSON.stringify(this.formElements) },
     });
+  }
+
+  navigateToDynamicForm2() {
+    this.formDataService.setFormElements(this.formElements);
+    this.router.navigate(['/dynamic-form2']);
   }
 
   addElement() {
