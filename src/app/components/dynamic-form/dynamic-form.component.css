@@ -6,7 +6,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #ff90fb;
+    border: 2px solid rgb(255, 0, 200);
   }
   
   /* Form title */
@@ -15,6 +16,18 @@
     font-size: 18px;
     margin-bottom: 15px;
     color: #333;
+  }
+
+  button{
+    border: 2px solid rgb(255, 0, 200);
+  }
+  button:hover{
+    border: 2px solid rgb(255, 0, 200);
+    background-color: #ff90fb;
+  }
+
+  input{
+    border: 2px solid rgb(255, 0, 200);
   }
   
   /* Form group styling */

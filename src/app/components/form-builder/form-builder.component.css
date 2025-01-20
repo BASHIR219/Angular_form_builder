@@ -1,5 +1,5 @@
 body {
-  
+  background-color: rgb(183, 48, 48);
   padding: 20px;
 }
 
@@ -23,9 +23,42 @@ body {
   color: red;
 }
 
+h2{
+  color: rgb(255, 0, 200);
+}
+
+input{
+  border: 2px solid rgb(255, 0, 200);
+  outline: none; 
+  border-radius: 5px;
+}
+
+select{
+  border: 2px solid rgb(255, 0, 200);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button{
+  border: 2px solid rgb(255, 0, 200);
+  background-color: #dc8ad9;
+  border-radius:5px ;
+}
+button:hover{
+  border: 2px solid rgb(255, 0, 200);
+  background-color: #f427ed;
+  border-radius:5px ;
+}
+
+
 .container {
   max-width: 500px;
   margin: auto;
+  border: 2px solid rgb(255, 0, 200);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 4px #e90ced33;
+
 }
 
 .input-group {
@@ -50,6 +83,7 @@ table {
   width: 100%;
   margin-top: 20px;
   border-collapse: collapse;
+  border: 1px solid rgb(255, 0, 200);
 }
 
 table th,
@@ -60,7 +94,8 @@ table td {
 }
 
 table th {
-  background-color: #f4f4f4;
+  background-color: #fb7bd0;
+  border: 1px solid rgb(255, 0, 200);
 }
 
 .pre {
